@@ -1,0 +1,47 @@
+var record = [{
+  "Name": "Gibo",
+  "Age": 16,
+  "SkillSet": [{
+    "Skill": "SAP UI5"
+  }, {
+    "Skill": "SAP HANA"
+  }]
+}, {
+  "Name": "Patrick",
+  "Age": 22,
+  "SkillSet": [{
+    "Skill": "SAP UI5"
+  }, {
+    "Skill": "SAP HANA"
+  }, {
+    "Skill": "SAP ABAP"
+  }]
+}, {
+  "Name": "MJ",
+  "Age": 24,
+  "SkillSet": [{
+    "Skill": "SAP HANA"
+  }]
+}];
+
+// Initialize variables to track the highest skill count and the corresponding person
+var maxSkills = -1;
+var personWithMostSkills = null;
+
+// Loop through each person in the record
+for (let i = 0; i < record.length; i++) {
+  var person = record[i];
+  var skillCount = person.SkillSet.length;
+
+  // Check if the current person has more skills than the previous maximum
+  if (skillCount > maxSkills) {
+    maxSkills = skillCount;
+    personWithMostSkills = person;
+  }
+}
+
+// Output the name and age of the person with the most skills
+if (personWithMostSkills) {
+  console.log("Name: " + personWithMostSkills.Name);
+  console.log("Age: " + personWithMostSkills.Age);
+}
