@@ -1,0 +1,22 @@
+var height = parseInt(prompt("Enter the height of the triangle: "));
+if (isNaN(height) || height < 0) {
+ console.log("Please enter a valid non-negative number.");
+} else {
+ var i = 0;
+ while (i < height) {
+   var spaces = "";
+   var stars = "";
+   var j = 0;
+   while (j < i) {
+     spaces += " ";
+     j++;
+   }
+   var k = height - i;
+   while (k > 0) {
+     stars += "*";
+     k--;
+   }
+   console.log(spaces + stars);
+   i++;
+ }
+}
