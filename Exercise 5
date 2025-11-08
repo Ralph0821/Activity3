@@ -1,0 +1,15 @@
+var color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+var o = ["th", "st", "nd", "rd"];
+
+// Helper function to get the correct ordinal suffix, defined with var
+var getOrdinalSuffix = function(n) {
+  var v = n % 100;
+  return o[(v - 20) % 10] || o[v] || o[0];
+};
+
+for (var i = 0; i < color.length; i++) {
+  var number = i + 1;
+  var suffix = getOrdinalSuffix(number);
+  var output = number + suffix + " choice is " + color[i].trim() + ".";
+  console.log(output);
+}
