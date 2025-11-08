@@ -1,0 +1,10 @@
+function calculateTrianglePerimeter(sideA, sideB, sideC) {
+  return sideA + sideB + sideC;
+}
+
+// Example usage:
+let perimeter1 = calculateTrianglePerimeter(5, 6, 7);
+console.log(perimeter1); // Output: 18
+
+let perimeter2 = calculateTrianglePerimeter(10, 15, 20);
+console.log(perimeter2); // Output: 45
