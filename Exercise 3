@@ -1,0 +1,22 @@
+function printXPattern(height) {
+  if (height < 0 || height % 2 === 0) {
+    console.log("Please provide a non-negative, odd number for height.");
+    return;
+  }
+
+  for (let i = 0; i < height; i++) {
+    let row = "";
+    for (let j = 0; j < height; j++) {
+      if (i === j || i + j === height - 1) {
+        row += "*";
+      } else {
+        row += " ";
+      }
+    }
+    console.log(row);
+  }
+}
+
+// Sample input from the problem
+var height = 5;
+printXPattern(height);
