@@ -1,0 +1,42 @@
+function numberToWords(number) {
+    // Validation
+    if (number < 1 || number > 999 || isNaN(number)) {
+        return "Please enter a number between 1 and 999.";
+    }
+
+    // Arrays for word mapping
+    var ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+    var teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", 
+                 "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+    var tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+    var words = "";
+
+    // Handle hundreds place
+    if (number >= 100) {
+        var hundreds = Math.floor(number / 100);
+        words += ones[hundreds] + " Hundred";
+        number = number % 100; // Get remainder
+        if (number > 0) words += " "; // Add space before the next part
+    }
+
+    // Handle tens and ones place
+    if (number >= 10 && number < 20) {
+        words += teens[number - 10];
+    } else if (number >= 20) {
+        var tensPlace = Math.floor(number / 10);
+        words += tens[tensPlace];
+        var onesPlace = number % 10;
+        if (onesPlace > 0) words += " " + ones[onesPlace];
+    } else if (number > 0) {
+        words += ones[number];
+    }
+
+    return words;
+}
+
+// Sample Input
+var number = 789;
+
+// Output
+console.log(numberToWords(number)); // Output: Seven Hundred Eighty Nine
